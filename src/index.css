@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply text-base;
+}
+
+.bg {
+	@apply h-full flex justify-center p-0 m-0;
+}
