@@ -7,7 +7,7 @@ export const ProductService: IProductService = {
 	async getProducts() {
 		const response = await axios.get<FullInfo>('/products', {
 			params: {
-				limit: 5
+				limit: 15
 			}
 		})
 		return response.data

@@ -1,0 +1,6 @@
+.layout {
+	@apply px-2.5 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 min-h-screen;
+}
+.title {
+	@apply flex justify-center mb-4;
+}

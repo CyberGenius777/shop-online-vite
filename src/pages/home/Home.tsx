@@ -1,8 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { toast } from 'react-toastify'
+import Layout from '../../components/Layout/Layout'
 import Loader from '../../components/Loader/Loader'
+import ProductItem from '../../components/ProductItem/ProductItem'
 import { ProductService } from '../../services/ProductService'
+
+import styles from './Home.module.scss'
 
 const Home: React.FC = () => {
 	const { data: products, isLoading } = useQuery(
@@ -13,15 +17,21 @@ const Home: React.FC = () => {
 			onError: ({ message }) => toast.error(message)
 		}
 	)
-	console.log('isLoading: ', isLoading)
-	return isLoading ? (
-		<Loader />
-	) : (
-		<div className='bg-orange-900'>
-			{products?.map(({ id, title }) => {
-				return <p key={id}>{title}</p>
-			})}
-		</div>
+
+	return (
+		<Layout title='Shop the collection'>
+			{isLoading ? (
+				<Loader />
+			) : products?.length ? (
+				<div className={styles.wrapper}>
+					{products?.map(product => {
+						return <ProductItem key={product.id} product={product} />
+					})}
+				</div>
+			) : (
+				<h3 className='flex justify-center'>Товаров не найдено!</h3>
+			)}
+		</Layout>
 	)
 }
 
