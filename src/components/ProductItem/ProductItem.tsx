@@ -1,6 +1,7 @@
 import React from 'react'
 import { IProduct } from '../../services/types/ProductService'
 
+import { Link } from 'react-router-dom'
 import styles from './ProductItem.module.scss'
 
 interface IProductItemProps {
@@ -10,21 +11,22 @@ interface IProductItemProps {
 const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 	return (
 		<div className={styles.item}>
-			<div
-				style={{
-					backgroundImage: `url(${product.thumbnail})`
-				}}
-				className={styles.image}
-			/>
-
-			<div className='heading'>{product.title}</div>
-			<div className={styles.price}>
-				{product.price.toLocaleString('us-US', {
-					style: 'currency',
-					currency: 'USD',
-					maximumFractionDigits: 0
-				})}
-			</div>
+			<Link to={`/product/${product.id}`}>
+				<div
+					style={{
+						backgroundImage: `url(${product.thumbnail})`
+					}}
+					className={styles.image}
+				/>
+				<div className='heading'>{product.title}</div>
+				<div className={styles.price}>
+					{product.price.toLocaleString('us-US', {
+						style: 'currency',
+						currency: 'USD',
+						maximumFractionDigits: 0
+					})}
+				</div>
+			</Link>
 		</div>
 	)
 }

@@ -1,5 +1,6 @@
 export interface IProductService {
 	getProducts: () => Promise<FullInfo>
+	getProduct: (id: string) => Promise<IProduct>
 }
 
 export interface FullInfo {

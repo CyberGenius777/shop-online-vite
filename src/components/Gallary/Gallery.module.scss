@@ -1,0 +1,15 @@
+.gallery {
+	.image {
+		@apply block  w-96 h-80 bg-cover bg-center bg-no-repeat transition-all duration-500 ease-in-out rounded-md;
+	}
+
+	.list {
+		> button {
+			width: 100%;
+		}
+		@apply flex h-20 gap-2  justify-between;
+		.tabs {
+			@apply w-full h-16 bg-cover bg-center bg-no-repeat rounded-lg;
+		}
+	}
+}

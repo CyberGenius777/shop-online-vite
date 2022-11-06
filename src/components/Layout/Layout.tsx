@@ -8,10 +8,11 @@ interface ILayoutProps {
 
 const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({
 	children,
-	title
+	title,
+	...rest
 }) => {
 	return (
-		<div className={styles.layout}>
+		<div {...rest} className={styles.layout}>
 			{title && <h1 className={styles.title}>{title}</h1>}
 			{children}
 		</div>
