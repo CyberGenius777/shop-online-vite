@@ -1,4 +1,6 @@
 .item {
+	@apply flex flex-col items-center relative;
+
 	.image {
 		@apply border border-solid mb-4 shadow-2xl shadow-white w-96 h-80 bg-cover bg-center bg-no-repeat;
 	}

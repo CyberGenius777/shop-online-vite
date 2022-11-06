@@ -23,7 +23,7 @@ const Gallery: React.FC<IGalleryProps> = ({ images: withThumNail }) => {
 			/>
 			<div className={styles.list}>
 				{images.map((currentImage, index) => (
-					<button onClick={onChange(index)}>
+					<button key={currentImage} onClick={onChange(index)}>
 						<div
 							style={{
 								backgroundImage: `url(${currentImage})`
