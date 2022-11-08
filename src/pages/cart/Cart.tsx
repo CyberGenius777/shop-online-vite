@@ -12,7 +12,7 @@ const Cart = () => {
 			{items.length ? (
 				<div className='grid grid-cols-2 gap-3'>
 					{items.map((item, index) => (
-						<div className='flex justify-between items-center'>
+						<div key={item.id} className='flex justify-between items-center'>
 							<div>
 								<img
 									src={item.thumbnail}
