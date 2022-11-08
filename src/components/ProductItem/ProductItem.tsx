@@ -17,12 +17,11 @@ const ProductItem: React.FC<IProductItemProps> = ({ product }) => {
 	const { items } = useSelector((state: RootState) => state.cart)
 	const { addToCart, removeFromCart } = useActions()
 	const isInCart: boolean = items.some(item => item.id === product.id)
-	console.log('items', items.length)
+
 	const onChange = React.useCallback(() => {
 		isInCart ? removeFromCart(product.id) : addToCart(product)
 	}, [isInCart])
 
-	console.log('render')
 	return (
 		<div className={styles.item}>
 			{isInCart ? (
