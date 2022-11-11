@@ -1,4 +1,4 @@
-import { Flip, ToastContainer } from 'react-toastify'
+import { Bounce, ToastContainer } from 'react-toastify'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -8,10 +8,10 @@ const Toaster = () => {
 			pauseOnHover
 			closeOnClick
 			closeButton={false}
-			autoClose={3000}
+			autoClose={2000}
 			position='bottom-center'
 			theme='colored'
-			transition={Flip}
+			transition={Bounce}
 			hideProgressBar
 		/>
 	)
